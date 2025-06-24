@@ -34,7 +34,7 @@ os.makedirs('html_lotes/images', exist_ok=True)
 os.makedirs('qrcodes_lotes', exist_ok=True)
 
 # Caminho absoluto da logo no repositório GitHub Pages
-URL_LOGO = "https://airslaid.github.io/rastreamento-lotes/html_lotes/images/logo.png"
+URL_LOGO = "https://airslaid.github.io/rastreamento-lotes/html_lotes/Images/logo.png"
 
 # Função para gerar QR Code
 def gera_qrcode(data, arquivo):
