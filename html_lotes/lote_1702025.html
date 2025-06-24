@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalhes do Produto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 720px;
+      margin: auto;
+      background: white;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    .header img {
+      height: 50px;
+      margin-right: 15px;
+    }
+    .header h1 {
+      font-size: 1.4rem;
+      color: #111;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .item {
+      margin-bottom: 25px;
+      padding: 15px 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: inset 0 0 3px #ddd;
+    }
+    .item-title {
+      font-size: 0.85rem;
+      color: #b01e23;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .item-value {
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 500;
+      word-break: break-word;
+    }
+    @media(max-width: 600px) {
+      .container { padding: 20px; }
+      .header h1 { font-size: 1.2rem; }
+      .item-value { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://airslaid.github.io/rastreamento-lotes/html_lotes/images/logo.png" alt="Logo">
+      <h1>Detalhes do Produto</h1>
+    </div>
+    
+    <div class="item">
+      <div class="item-title">Ordem de Produção</div>
+      <div class="item-value">170</div>
+    </div>
+    <div class="item">
+      <div class="item-title">Número do Lote</div>
+      <div class="item-value">1702025</div>
+    </div>
+    <div class="item">
+      <div class="item-title">Código do Produto</div>
+      <div class="item-value">FR0061</div>
+    </div>
+    <div class="item">
+      <div class="item-title">Descrição</div>
+      <div class="item-value">FILTRO ROTATIVO AS-130.CA C-6500 X L-2800MM</div>
+    </div>
+    <div class="item">
+      <div class="item-title">Data de Fabricação</div>
+      <div class="item-value">05/05/2025</div>
+    </div>
+    <div class="item">
+      <div class="item-title">Composição</div>
+      <div class="item-value">100%Poliester</div>
+    </div>
+  </div>
+</body>
+</html>
