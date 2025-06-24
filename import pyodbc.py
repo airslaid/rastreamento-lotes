@@ -80,18 +80,11 @@ def gera_html_estilizado(lote, dados, arquivo):
     }}
     .header {{
       display: flex;
-      align-items: center;
+      justify-content: center;
       margin-bottom: 25px;
     }}
     .header img {{
-      height: 50px;
-      margin-right: 15px;
-    }}
-    .header h1 {{
-      font-size: 1.4rem;
-      color: #111;
-      margin: 0;
-      text-transform: uppercase;
+      height: 60px;
     }}
     .item {{
       margin-bottom: 25px;
@@ -115,7 +108,6 @@ def gera_html_estilizado(lote, dados, arquivo):
     }}
     @media(max-width: 600px) {{
       .container {{ padding: 20px; }}
-      .header h1 {{ font-size: 1.2rem; }}
       .item-value {{ font-size: 1rem; }}
     }}
   </style>
@@ -124,7 +116,6 @@ def gera_html_estilizado(lote, dados, arquivo):
   <div class="container">
     <div class="header">
       <img src="{URL_LOGO}" alt="Logo">
-      <h1>Detalhes do Produto</h1>
     </div>
     {''.join(f"""
     <div class="item">
@@ -149,13 +140,11 @@ for _, row in df.iterrows():
 
     dados = row.to_dict()
 
-    # Ajustes de dados
     if dados['ORD_IN_CODIGO'] is not None:
         dados['ORD_IN_CODIGO'] = int(dados['ORD_IN_CODIGO'])
     if dados['ORD_DT_ABERTURA_REAL'] is not None:
         dados['ORD_DT_ABERTURA_REAL'] = dados['ORD_DT_ABERTURA_REAL'].strftime('%d/%m/%Y')
 
-    # Geração dos arquivos
     gera_html_estilizado(lote, dados, html_path)
     url_github = f'https://airslaid.github.io/rastreamento-lotes/html_lotes/{html_filename}'
     gera_qrcode(url_github, qr_path)
@@ -167,11 +156,11 @@ for _, row in df.iterrows():
     })
     print(f"Lote {lote}: HTML e QR gerados.")
 
-# Exporta planilha Excel com os registros
+# Exporta para Excel
 pd.DataFrame(registro).to_excel('lotes_html_qr.xlsx', index=False)
 print("Planilha 'lotes_html_qr.xlsx' foi criada.")
 
-# ⚙️ Etapa final: push automático no Git
+# Git push automático
 print("Enviando para o GitHub...")
 subprocess.run(["git", "add", "."], cwd=".")
 subprocess.run(["git", "commit", "-m", "Atualização automática dos arquivos"], cwd=".")
